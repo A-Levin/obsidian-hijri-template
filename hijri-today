@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+import sys
+# Update this path to your Python site-packages location
+# Find it with: python3 -c "import hijridate; print(hijridate.__file__)"
+sys.path.insert(0, '/home/username/.local/lib/python3.x/site-packages')
+from hijridate import Gregorian
+h = Gregorian.today().to_hijri()
+m = {1:'Muharram',2:'Safar',3:'Rabi-al-Awwal',4:'Rabi-al-Thani',5:'Jumada-al-Awwal',6:'Jumada-al-Thani',7:'Rajab',8:'Shaban',9:'Ramadan',10:'Shawwal',11:'Dhul-Qadah',12:'Dhul-Hijjah'}
+print(f'{h.day:02d}-{m[h.month]}-{h.year}')
